@@ -114,7 +114,7 @@ impl MySqlStream {
         Ok(())
     }
 
-    pub(crate) async fn send_packet<'en, T>(&mut self, payload: T) -> Result<(), Error>
+    pub async fn send_packet<'en, T>(&mut self, payload: T) -> Result<(), Error>
     where
         T: Encode<'en, Capabilities>,
     {
@@ -133,7 +133,7 @@ impl MySqlStream {
 
     // receive the next packet from the database server
     // may block (async) on more data from the server
-    pub(crate) async fn recv_packet(&mut self) -> Result<Packet<Bytes>, Error> {
+    pub async fn recv_packet(&mut self) -> Result<Packet<Bytes>, Error> {
         // https://dev.mysql.com/doc/dev/mysql-server/8.0.12/page_protocol_basic_packets.html
         // https://mariadb.com/kb/en/library/0-packet/#standard-packet
 

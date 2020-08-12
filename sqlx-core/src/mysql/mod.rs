@@ -9,7 +9,7 @@ mod done;
 mod error;
 mod io;
 mod options;
-mod protocol;
+pub mod protocol;
 mod row;
 mod statement;
 mod transaction;

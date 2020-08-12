@@ -25,7 +25,7 @@ pub struct MySqlConnection {
     // underlying TCP stream,
     // wrapped in a potentially TLS stream,
     // wrapped in a buffered stream
-    pub(crate) stream: MySqlStream,
+    pub stream: MySqlStream,
 
     // transaction status
     pub(crate) transaction_depth: usize,
